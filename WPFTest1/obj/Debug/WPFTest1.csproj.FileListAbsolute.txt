@@ -1,0 +1,15 @@
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\bin\Debug\WPFTest1.exe.config
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\bin\Debug\WPFTest1.exe
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\bin\Debug\WPFTest1.pdb
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\WPFTest1.csprojResolveAssemblyReference.cache
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\MainWindow.g.cs
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\App.g.cs
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\WPFTest1_MarkupCompile.cache
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\WPFTest1_MarkupCompile.lref
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\MainWindow.baml
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\WPFTest1.g.resources
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\WPFTest1.Properties.Resources.resources
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\WPFTest1.csproj.GenerateResource.cache
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\WPFTest1.csproj.CoreCompileInputs.cache
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\WPFTest1.exe
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\WPFTest1\obj\Debug\WPFTest1.pdb

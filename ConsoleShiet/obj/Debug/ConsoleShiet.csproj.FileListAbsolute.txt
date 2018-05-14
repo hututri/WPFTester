@@ -1,0 +1,7 @@
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\ConsoleShiet\obj\Debug\ConsoleShiet.csprojResolveAssemblyReference.cache
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\ConsoleShiet\obj\Debug\ConsoleShiet.csproj.CoreCompileInputs.cache
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\ConsoleShiet\bin\Debug\ConsoleShiet.exe.config
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\ConsoleShiet\bin\Debug\ConsoleShiet.exe
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\ConsoleShiet\bin\Debug\ConsoleShiet.pdb
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\ConsoleShiet\obj\Debug\ConsoleShiet.exe
+C:\Users\tht\Documents\Visual Studio 2017\WPFTester\ConsoleShiet\obj\Debug\ConsoleShiet.pdb
