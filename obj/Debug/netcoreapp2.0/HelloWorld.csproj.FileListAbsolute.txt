@@ -1,0 +1,21 @@
+C:\temp\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.deps.json
+C:\temp\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.runtimeconfig.json
+C:\temp\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.runtimeconfig.dev.json
+C:\temp\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.dll
+C:\temp\HelloWorld\bin\Debug\netcoreapp2.0\HelloWorld.pdb
+C:\temp\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.csproj.CoreCompileInputs.cache
+C:\temp\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.AssemblyInfoInputs.cache
+C:\temp\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.AssemblyInfo.cs
+C:\temp\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.dll
+C:\temp\HelloWorld\obj\Debug\netcoreapp2.0\HelloWorld.pdb
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\bin\Debug\netcoreapp2.0\HelloWorld.deps.json
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\bin\Debug\netcoreapp2.0\HelloWorld.runtimeconfig.json
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\bin\Debug\netcoreapp2.0\HelloWorld.runtimeconfig.dev.json
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\bin\Debug\netcoreapp2.0\HelloWorld.dll
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\bin\Debug\netcoreapp2.0\HelloWorld.pdb
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\obj\Debug\netcoreapp2.0\HelloWorld.csprojResolveAssemblyReference.cache
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\obj\Debug\netcoreapp2.0\HelloWorld.csproj.CoreCompileInputs.cache
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\obj\Debug\netcoreapp2.0\HelloWorld.AssemblyInfoInputs.cache
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\obj\Debug\netcoreapp2.0\HelloWorld.AssemblyInfo.cs
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\obj\Debug\netcoreapp2.0\HelloWorld.dll
+C:\Users\tht\Documents\Visual Studio 2017\ConsoleApp\obj\Debug\netcoreapp2.0\HelloWorld.pdb
