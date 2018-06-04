@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1200">
     <Grid>
-        <StackPanel Height="auto" Width="auto" Background="LightGray" DataContext="{Binding group}">
+        <StackPanel x:Name="pnl">
+        <StackPanel Height="600" Width="auto" Background="LightGray" DataContext="{Binding group}">
             <TextBox Text="{Binding Val, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <TextBox Text="{Binding Val, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <RadioButton  IsChecked="{Binding Rad2}"  ></RadioButton>
@@ -30,6 +31,32 @@
                                 <CheckBox IsChecked="{Binding Path=Bool1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="{Binding Val2, UpdateSourceTrigger=PropertyChanged}"></CheckBox>
                                 <!--<CheckBox IsChecked="{Binding Path=Bool1, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="{Binding Val2, UpdateSourceTrigger=PropertyChanged}"></CheckBox>-->
 
+
+                                <ItemsControl ItemsSource="{Binding CACs, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Background="#aaf" Margin="15 0 0 0">
+                                                <Label Content="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" FontWeight="Black" Margin="0 5 0 0"/>
+                                                <CheckBox IsChecked="{Binding Path=Status, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="{Binding Name}"/>
+                                                <CheckBox IsChecked="{Binding Path=Status, UpdateSourceTrigger=PropertyChanged, Mode=Default}" Content="{Binding Name}"/>
+                                                <CheckBox IsChecked="{Binding Status, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, NotifyOnSourceUpdated=True}" Content="{Binding Name}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <ItemsControl ItemsSource="{Binding EtatsLecture, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Background="#faa" Margin="15 0 0 0">
+                                                <Label Content="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" FontWeight="Black" Margin="0 5 0 0"/>
+                                                <RadioButton GroupName="aa" IsChecked="{Binding Path=Status, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="SubZ" />
+                                                <!--<CheckBox IsChecked="{Binding Path=Status, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Content="{Binding Name}"></CheckBox>-->
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
                                 <ItemsControl ItemsSource="{Binding SubElements, UpdateSourceTrigger=PropertyChanged}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
@@ -44,9 +71,9 @@
                                                 
                                                 <!--<CheckBox IsChecked="{Binding Path=NeutralBool}" Content="{Binding Val2, UpdateSourceTrigger=PropertyChanged}"></CheckBox>-->
                                                 
-                                                <!--<RadioButton GroupName="{Binding ElementName=OuterRef, Path=DataContext.Id}" IsChecked="{Binding Rad1, UpdateSourceTrigger=PropertyChanged}" Content="Val1"  ></RadioButton>
+                                                <RadioButton GroupName="{Binding ElementName=OuterRef, Path=DataContext.Id}" IsChecked="{Binding Rad1, UpdateSourceTrigger=PropertyChanged}" Content="Val1"  ></RadioButton>
                                                 <RadioButton GroupName="{Binding ElementName=OuterRef, Path=DataContext.Id}" IsChecked="{Binding Rad2, UpdateSourceTrigger=PropertyChanged}" Content="Val2"  ></RadioButton>
-                                                <RadioButton GroupName="{Binding ElementName=OuterRef, Path=DataContext.Id}" IsChecked="{Binding Rad3, UpdateSourceTrigger=PropertyChanged}" Content="Val3"  ></RadioButton>-->
+                                                <RadioButton GroupName="{Binding ElementName=OuterRef, Path=DataContext.Id}" IsChecked="{Binding Rad3, UpdateSourceTrigger=PropertyChanged}" Content="Val3"  ></RadioButton>
                                             </StackPanel>
 
                                         </DataTemplate>
@@ -71,6 +98,8 @@
 
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
+
+
                             </StackPanel>
                         </ScrollViewer>
                     </DataTemplate>
@@ -78,6 +107,8 @@
 
             </ItemsControl>
 
+        </StackPanel>
+            <Button >valider</Button>
         </StackPanel>
     </Grid>
 </Window>

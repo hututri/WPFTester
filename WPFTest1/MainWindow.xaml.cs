@@ -235,6 +235,40 @@ namespace WPFTest1
             }
         }
 
+        private List<SubElementY> _subY;
+
+        public List<SubElementY> CACs
+        {
+            get { return _subY; }
+            set
+            {
+                _subY = value;
+                OnPropertyChanged("CACs");
+                foreach (SubElementY se in this.CACs)
+                {
+                    se.PropertyChanged += new PropertyChangedEventHandler(CAC_PropertyChanged);
+                }
+            }
+        }
+
+
+
+        private List<SubElementZ> _subZ;
+
+        public List<SubElementZ> EtatsLecture
+        {
+            get { return _subZ; }
+            set
+            {
+                _subZ = value;
+                OnPropertyChanged("EtatsLecture");
+                foreach (SubElementZ se in this.EtatsLecture)
+                {
+                    se.PropertyChanged += new PropertyChangedEventHandler(EtatLecture_PropertyChanged);
+                }
+            }
+        }
+
         private void SubElem_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             SubElements.ForEach(x => x.SuspendPropertyChange = true);
@@ -248,7 +282,7 @@ namespace WPFTest1
             //SubElementsX.First().SuspendPropertyChange = false;
             SubElements.ForEach(x => x.SuspendPropertyChange = false);
 
-            
+
             OnPropertyChanged("SubElements");
         }
         private void SubElemX_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -278,6 +312,65 @@ namespace WPFTest1
             //OnPropertyChanged("Element");
             //OnPropertyChanged("SubElement");
             //OnPropertyChanged("SubElementsX");
+        }
+
+        /// <summary>
+        /// CAC = 1
+        /// Etat lecture = 2
+        /// </summary>
+        private int caller = 0;
+        private int num = 0;
+
+        //private bool exit = false;
+        //cb - CAC
+        private void CAC_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+
+            if (EtatsLecture[0].SuspendPing == false)
+            {
+                CACs.ForEach(x => x.SuspendPropertyChange = true);
+                EtatsLecture.ForEach(x => x.SuspendPropertyChange = true);
+
+                List<SubElementZ> subElementZs = EtatsLecture.Where(x => x.EstSelectionne == true).ToList();
+                EtatsLecture.ForEach(x => x.EstSelectionne = false);
+                EtatsLecture.First(x => x.num == ((SubElementY)sender).num).EstSelectionne = true;
+
+                CACs.ForEach(x => x.SuspendPropertyChange = false);
+                EtatsLecture.ForEach(x => x.SuspendPropertyChange = false);
+
+                triggerStuff();
+
+            }
+
+        }
+
+        private void triggerStuff()
+        {
+            EtatsLecture.ForEach(x => x.SuspendPing = true);
+            CACs.ForEach(x => x.SuspendPing = true);
+
+            EtatsLecture.ForEach(x => x.EstSelectionne = x.EstSelectionne);
+            CACs.ForEach(x => x.EstSelectionne = x.EstSelectionne);
+
+            EtatsLecture.ForEach(x => x.SuspendPing = false);
+            CACs.ForEach(x => x.SuspendPing = false);
+        }
+
+        //radio - EtatLecture
+        private void EtatLecture_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            //pcc
+            if (CACs[0].SuspendPing == false && ((SubElementZ)sender).EstSelectionne == true)
+            {
+                CACs.ForEach(x => x.SuspendPropertyChange = true);
+
+                CACs.ForEach(x => x.EstSelectionne = false);
+                CACs.First(x => x.num == ((SubElementZ)sender).num).EstSelectionne = true;
+
+                CACs.ForEach(x => x.SuspendPropertyChange = false);
+
+                triggerStuff();
+            }
         }
 
         public Element()
@@ -310,6 +403,18 @@ namespace WPFTest1
 
             }
 
+            CACs = new List<SubElementY>();
+            CACs.Add(new SubElementY(1));
+            CACs.Add(new SubElementY(2));
+            CACs.Add(new SubElementY(3));
+
+            CACs = CACs;
+
+            EtatsLecture = new List<SubElementZ>();
+            EtatsLecture.Add(new SubElementZ(1));
+            EtatsLecture.Add(new SubElementZ(2));
+            EtatsLecture.Add(new SubElementZ(3));
+            EtatsLecture = EtatsLecture;
         }
 
         protected virtual void OnPropertyChanged(string propertyName)
@@ -473,6 +578,103 @@ namespace WPFTest1
         {
             if (!SuspendPropertyChange)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+    }
+
+    public class SubElementY : INotifyPropertyChanged
+    {
+        private string _val2;
+
+        public string Name
+        {
+            get { return _val2; }
+            set
+            {
+                _val2 = value;
+                OnPropertyChanged("Name");
+            }
+        }
+        public bool SuspendPropertyChange { get; set; }
+        public bool SuspendPing { get; set; }
+
+        private bool _EstSelectionne;
+
+        public bool EstSelectionne
+        {
+            get { return _EstSelectionne; }
+            set
+            {
+                _EstSelectionne = value;
+                OnPropertyChanged("EstSelectionne");
+            }
+        }
+        public bool UpOnce { get; set; }
+        public int num { get; set; }
+        public SubElementY(int a)
+        {
+            EstSelectionne = false;
+            Name = "SubElementY " + Randomizer.Chaine(2);
+            num = a;
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+
+            if (!SuspendPropertyChange)
+            { PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); }
+
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+    }
+
+    public class SubElementZ : INotifyPropertyChanged
+    {
+        private string _val2;
+
+        public string Name
+        {
+            get { return _val2; }
+            set
+            {
+                _val2 = value;
+                OnPropertyChanged("Name");
+            }
+        }
+        public bool SuspendPropertyChange { get; set; }
+        public bool SuspendPing { get; set; }
+
+        private bool _EstSelectionne;
+
+        public bool EstSelectionne
+        {
+            get { return _EstSelectionne; }
+            set
+            {
+                _EstSelectionne = value;
+                OnPropertyChanged("EstSelectionne");
+            }
+        }
+
+        public bool UpOnce { get; set; }
+        public int num { get; set; }
+
+
+        public SubElementZ(int a)
+        {
+            EstSelectionne = false;
+            num = a;
+            Name = "SubElementZ " + Randomizer.Chaine(2);
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            if (!SuspendPropertyChange)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
