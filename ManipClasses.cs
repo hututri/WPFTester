@@ -18,13 +18,12 @@ namespace ConsoleApp
         {
 
         }
-
     }
 
     public class Carrier:Ship
     {
+public int MyProperty { get; set; }
 
-        
     }
 
 
